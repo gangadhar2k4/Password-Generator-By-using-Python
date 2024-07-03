@@ -33,38 +33,32 @@ def PasswordGenerator(length,
 
 def PasswordCustomization():
 
-    inludeLowerCaseLetters = None
-    inludeUpperCaseLetters = None
-    Numbers = None
-    Symbols = None
+    includeLowerCaseLetters = False
+    includeUpperCaseLetters = False
+    includeNumbers = False
+    includeSymbols = False
 
-    Length = int(input("Enter Length of Password you need to Generate: "))
+    length = int(input("Enter the length of password you need to generate: "))
 
-    choice = input("If you want to include LowerCase Letters (y/n) or (Y/N): ")
-    if choice != 'n' or choice != 'N':
-        inludeLowerCaseLetters = True
-    else:
-        inludeLowerCaseLetters = False
+    # Input choices for character types
+    choice = input("Include Lowercase Letters? (y/n): ").lower()
+    if choice == 'y':
+        includeLowerCaseLetters = True
 
-    choice = input("If you want to include UpperCase Letters (y/n) or (Y/N): ")
-    if choice != 'n' or choice != 'N':
-        inludeUpperCaseLetters = True
-    else:
-        inludeUpperCaseLetters = False
+    choice = input("Include Uppercase Letters? (y/n): ").lower()
+    if choice == 'y':
+        includeUpperCaseLetters = True
 
-    choice = input("If you want to include Numbers (y/n) or (Y/N): ")
-    if choice != 'n' or choice != 'N':
-        Numbers = True
-    else:
-        Numbers = False
+    choice = input("Include Numbers? (y/n): ").lower()
+    if choice == 'y':
+        includeNumbers = True
 
-    choice = input("If you want to include Symbols (y/n) or (Y/N): ")
-    if choice != 'n' or choice != 'N':
-        Symbols = True
-    else:
-        Symbols = False
+    choice = input("Include Symbols? (y/n): ").lower()
+    if choice == 'y':
+        includeSymbols = True
     
-    Password = PasswordGenerator(Length,inludeLowerCaseLetters,
+    Password = PasswordGenerator(Length,
+                      inludeLowerCaseLetters,
                       inludeUpperCaseLetters,
                       Numbers,
                       Symbols
