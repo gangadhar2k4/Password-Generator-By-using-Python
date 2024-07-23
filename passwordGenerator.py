@@ -57,11 +57,11 @@ def PasswordCustomization():
     if choice == 'y':
         includeSymbols = True
     
-    Password = PasswordGenerator(Length,
-                      inludeLowerCaseLetters,
-                      inludeUpperCaseLetters,
-                      Numbers,
-                      Symbols
+    Password = PasswordGenerator(length,
+                      includeLowerCaseLetters,
+                      includeUpperCaseLetters,
+                      includeNumbers,
+                      includeSymbols
                       )
     print(f'Generated password : {Password}')
 
